@@ -1,0 +1,33 @@
+--- a/src/agent/CMakeLists.txt
++++ b/src/agent/CMakeLists.txt
+@@ -54,21 +54,23 @@
+     openthread-posix
+     openthread-cli-ftd
+     openthread-ftd
+-    openthread-posix
++    openthread-platform
+     openthread-spinel-rcp
+     openthread-hdlc
++    openthread-url
+     otbr-common
+     otbr-utils
++    util
+ )
+ 
+-add_dependencies(otbr-agent ot-ctl print-ot-config)
++#add_dependencies(otbr-agent ot-ctl print-ot-config)
+ install(TARGETS otbr-agent DESTINATION sbin)
+ 
+-if(CMAKE_VERSION VERSION_LESS 3.13)
+-    install(PROGRAMS $<TARGET_FILE:ot-ctl> DESTINATION sbin)
+-else()
+-    install(TARGETS ot-ctl DESTINATION sbin)
+-endif()
++#if(CMAKE_VERSION VERSION_LESS 3.13)
++#    install(PROGRAMS $<TARGET_FILE:ot-ctl> DESTINATION sbin)
++#else()
++#    install(TARGETS ot-ctl DESTINATION sbin)
++#endif()
+ 
+ set(OTBR_AGENT_USER "root" CACHE STRING "set the username running otbr-agent service")
+ set(OTBR_AGENT_GROUP "root" CACHE STRING "set the group using otbr-agent client")
