@@ -1,0 +1,29 @@
+Source: ot-br-posix
+Section: net
+Priority: optional
+Maintainer: Tokita, Hiroshi <tokita.hiroshi@gmail.com>
+Build-Depends: debhelper (>= 10), git, exuberant-ctags, pkg-config, libtool-bin, libdbus-1-dev, libboost1.67-dev, libboost-filesystem1.67-dev, libboost-system1.67-dev, libavahi-client-dev, libjsoncpp-dev
+Standards-Version: 4.1.3
+Homepage: https://openthread.io
+Vcs-Browser: https://github.com/soburi/ot-br-posix
+Vcs-Git: https://github.com/soburi/ot-br-posix
+
+Package: ot-br-posix
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: OpenThread Border Router, a Thread border router for POSIX-based platforms
+ OpenThread's implementation of a Border Router is called
+ OpenThread Border Router (OTBR).
+ OTBR is a Thread Certified Component on the Raspberry Pi 3B
+ with a Nordic nRF52840 NCP.
+ OTBR includes a number of features, including:
+  - Web UI for configuration and management
+  - Thread Border Agent to support an External Commissioner
+  - DHCPv6 Prefix Delegation to obtain IPv6 prefixes for a Thread network
+  - NAT64 for connecting to IPv4 networks
+  - DNS64 to allow Thread devices to initiate communications by name
+    to an IPv4-only server
+  - Thread interface driver using wpantund
+  - Docker support
+ More information about Thread can be found at threadgroup.org.
+ Thread is a registered trademark of the Thread Group, Inc.
