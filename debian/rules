@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+#export DH_VERBOSE = 1
+
+%:
+	dh $@
+
+override_dh_autoreconf:
+	git submodule update --init --recursive
+	./bootstrap
+
+override_dh_fixperms:
+	dh_fixperms
+	cp -rfp script debian/ot-br-posix/usr/share/ot-br-posix/
+	rm -rf debian/ot-br-posix/usr/lib
+
+
+
+override_dh_auto_test:
+
+

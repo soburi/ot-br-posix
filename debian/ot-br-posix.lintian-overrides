@@ -1,0 +1,18 @@
+ot-br-posix: improbable-bug-number-in-closes 1
+ot-br-posix: binary-without-manpage usr/sbin/otbr-agent
+ot-br-posix: binary-without-manpage usr/sbin/otbr-web
+ot-br-posix: binary-without-manpage usr/bin/otbr-commissioner
+ot-br-posix: binary-without-manpage usr/bin/pskc
+ot-br-posix: binary-without-manpage usr/bin/steering-data
+ot-br-posix: script-not-executable usr/share/ot-br-posix/script/_dhcpv6_pd
+ot-br-posix: script-not-executable usr/share/ot-br-posix/script/_disable_services
+ot-br-posix: script-not-executable usr/share/ot-br-posix/script/_dns64
+ot-br-posix: script-not-executable usr/share/ot-br-posix/script/_initrc
+ot-br-posix: script-not-executable usr/share/ot-br-posix/script/_ipforward
+ot-br-posix: script-not-executable usr/share/ot-br-posix/script/_nat64
+ot-br-posix: script-not-executable usr/share/ot-br-posix/script/_network_manager
+ot-br-posix: script-not-executable usr/share/ot-br-posix/script/_otbr
+ot-br-posix: script-not-executable usr/share/ot-br-posix/script/_sudo_extend
+ot-br-posix: script-not-executable usr/share/ot-br-posix/script/_swapfile
+ot-br-posix: script-not-executable usr/share/ot-br-posix/script/_wpantund
+
