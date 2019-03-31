@@ -1,0 +1,15 @@
+--- a/src/utils/steering_data.cpp
++++ b/src/utils/steering_data.cpp
+@@ -52,9 +52,9 @@
+     mbedtls_sha256_context sha256;
+ 
+     mbedtls_sha256_init(&sha256);
+-    mbedtls_sha256_starts(&sha256, 0);
+-    mbedtls_sha256_update(&sha256, aEui64, kSizeEui64);
+-    mbedtls_sha256_finish(&sha256, hash);
++    mbedtls_sha256_starts_ret(&sha256, 0);
++    mbedtls_sha256_update_ret(&sha256, aEui64, kSizeEui64);
++    mbedtls_sha256_finish_ret(&sha256, hash);
+ 
+     memcpy(aJoinerId, hash, kSizeJoinerId);
+     aJoinerId[0] |= 2;
