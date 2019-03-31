@@ -1,7 +1,7 @@
 Source: ot-br-posix
 Section: net
 Priority: optional
-Maintainer: Tokita, Hiroshi <tokita.hiroshi@gmail.com>
+Maintainer: soburi <soburi@gmail.com>
 Build-Depends: debhelper (>= 11)
 Standards-Version: 4.1.3
 Homepage: https://openthread.io
