@@ -5,7 +5,6 @@
 	dh $@
 
 override_dh_autoreconf:
-	git submodule update --init --recursive
 	./bootstrap
 
 override_dh_fixperms:
