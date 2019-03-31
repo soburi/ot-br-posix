@@ -1,0 +1,224 @@
+ot-br-posix (20180819-443-ge6ec05260-1ubuntu9) hirsute; urgency=medium
+
+  * add build dependencies
+
+ -- Tokita Hiroshi <soburi@gmail.com>  Tue, 08 Jun 2021 08:14:48 +0900
+
+ot-br-posix (20180819-443-ge6ec05260-1ubuntu8) hirsute; urgency=medium
+
+  * all package create from ot-br-posix
+
+ -- Tokita Hiroshi <soburi@gmail.com>  Tue, 08 Jun 2021 07:54:59 +0900
+
+ot-br-posix (20180819-442-gaa75a901a-1ubuntu7) hirsute; urgency=medium
+
+  * add resources
+
+ -- Tokita Hiroshi <soburi@gmail.com>  Mon, 07 Jun 2021 12:42:19 +0900
+
+ot-br-posix (20180819-442-gaa75a901a-1ubuntu6) hirsute; urgency=medium
+
+  * add suggest information
+
+ -- Tokita Hiroshi <soburi@gmail.com>  Mon, 07 Jun 2021 09:43:17 +0900
+
+ot-br-posix (20180819-442-gaa75a901a-1ubuntu5) hirsute; urgency=medium
+
+  * correct service file install
+
+ -- Tokita Hiroshi <soburi@gmail.com>  Mon, 07 Jun 2021 08:15:53 +0900
+
+ot-br-posix (20180819-442-gaa75a901a-1ubuntu4) hirsute; urgency=medium
+
+  * add tools
+
+ -- Tokita Hiroshi <soburi@gmail.com>  Mon, 07 Jun 2021 01:03:24 +0900
+
+ot-br-posix (20180819-442-gaa75a901a-1ubuntu3) hirsute; urgency=medium
+
+  * patch for ComputeJoinerId
+
+ -- Tokita Hiroshi <soburi@gmail.com>  Mon, 07 Jun 2021 00:10:23 +0900
+
+ot-br-posix (20180819-442-gaa75a901a-1ubuntu2) hirsute; urgency=medium
+
+  * re-upload
+
+ -- Tokita Hiroshi <soburi@gmail.com>  Sun, 06 Jun 2021 22:27:26 +0900
+
+ot-br-posix (20180819-442-gaa75a901a-1ubuntu1) hirsute; urgency=medium
+
+  * bump to gaa75a901a
+
+ -- Tokita Hiroshi <soburi@gmail.com>  Sun, 06 Jun 2021 22:00:26 +0900
+
+ot-br-posix (20180819-429-gf43ccf60b-1ubuntu4) hirsute; urgency=medium
+
+  * use libopenthread-dev
+
+ -- Tokita Hiroshi <soburi@gmail.com>  Sun, 06 Jun 2021 20:55:40 +0900
+
+ot-br-posix (20180819-429-gf43ccf60b-1ubuntu3) hirsute; urgency=medium
+
+  * update patches
+
+ -- Tokita Hiroshi <soburi@gmail.com>  Sun, 23 May 2021 12:14:28 +0900
+
+ot-br-posix (20180819-429-gf43ccf60b-1ubuntu2) hirsute; urgency=medium
+
+  * add ninja to build-dep
+
+ -- Tokita Hiroshi <soburi@gmail.com>  Sun, 23 May 2021 10:17:13 +0900
+
+ot-br-posix (20180819-429-gf43ccf60b-1ubuntu1) hirsute; urgency=medium
+
+  * hirsute
+
+ -- Tokita Hiroshi <soburi@gmail.com>  Sun, 23 May 2021 09:32:34 +0900
+
+ot-br-posix (0.01.00-221-gea9cd69-1ubuntu4) focal; urgency=medium
+
+  * correct Build-Depends
+
+ -- Tokita Hiroshi <soburi@gmail.com>  Sun, 06 Sep 2020 10:18:58 +0900
+
+ot-br-posix (0.01.00-221-gea9cd69-1ubuntu3) disco; urgency=medium
+
+  * disco
+
+ -- Tokita Hiroshi <soburi@gmail.com>  Sat, 05 Sep 2020 21:09:11 +0900
+
+ot-br-posix (0.01.00-221-gea9cd69-1ubuntu2) focal; urgency=medium
+
+  * libreadline-dev
+
+ -- Tokita Hiroshi <soburi@gmail.com>  Sat, 05 Sep 2020 18:37:45 +0900
+
+ot-br-posix (0.01.00-221-gea9cd69-1ubuntu1) focal; urgency=medium
+
+  * Bump to gea9cd69
+
+ -- Tokita Hiroshi <soburi@gmail.com>  Sat, 05 Sep 2020 08:50:10 +0900
+
+ot-br-posix (0.01.00-206-g95ac6cc-1ubuntu1) disco; urgency=medium
+
+  * Bump to g95ac6cc
+
+ -- soburi <soburi@gmail.com>  Sun, 02 Feb 2020 18:01:22 +0900
+
+ot-br-posix (0.01.00-190-ge3a6453-1ubuntu1) disco; urgency=medium
+
+  * add otbr-web default
+
+ -- soburi <soburi@gmail.com>  Fri, 02 Aug 2019 20:51:17 +0900
+
+ot-br-posix (0.01.00-178-g7ca84e4-1ubuntu3) disco; urgency=medium
+
+  * remove otbr-nat44
+
+ -- soburi <soburi@gmail.com>  Sat, 27 Jul 2019 15:19:28 +0900
+
+ot-br-posix (0.01.00-178-g7ca84e4-1ubuntu2) disco; urgency=medium
+
+  * Add ncp_state_notifier and otbr-nat44
+
+ -- soburi <soburi@gmail.com>  Thu, 18 Jul 2019 00:23:04 +0900
+
+ot-br-posix (0.01.00-178-g7ca84e4-1ubuntu1) disco; urgency=medium
+
+  * Bump to g7ca84e4
+  * Compatible with disco/buster
+  * Place script files on /usr/libexec
+
+ -- soburi <soburi@gmail.com>  Sat, 13 Jul 2019 10:42:51 +0900
+
+ot-br-posix (0.01.00-154-gc799da7-1ubuntu15) bionic; urgency=medium
+
+  * Compatible with stretch
+
+ -- soburi <soburi@gmail.com>  Mon, 08 Apr 2019 23:08:22 +0900
+
+ot-br-posix (0.01.00-154-gc799da7-1ubuntu14) bionic; urgency=medium
+
+  * Remove wpantund.service
+
+ -- soburi <soburi@gmail.com>  Mon, 08 Apr 2019 21:58:36 +0900
+
+ot-br-posix (0.01.00-154-gc799da7-1ubuntu13) bionic; urgency=medium
+
+  * Vcs url update.
+  * Update build dependency
+
+ -- soburi <soburi@gmail.com>  Thu, 04 Apr 2019 01:00:05 +0900
+
+ot-br-posix (0.01.00-154-gc799da7-1ubuntu12) bionic; urgency=medium
+
+  * Update build dependency
+
+ -- soburi <soburi@gmail.com>  Thu, 04 Apr 2019 00:08:44 +0900
+
+ot-br-posix (0.01.00-154-gc799da7-1ubuntu11) bionic; urgency=medium
+
+  * Update build dependency
+
+ -- soburi <soburi@gmail.com>  Thu, 04 Apr 2019 00:01:10 +0900
+
+ot-br-posix (0.01.00-154-gc799da7-1ubuntu10) bionic; urgency=medium
+
+  * Update build dependency
+
+ -- soburi <soburi@gmail.com>  Wed, 03 Apr 2019 23:23:08 +0900
+
+ot-br-posix (0.01.00-154-gc799da7-1ubuntu9) bionic; urgency=medium
+
+  * Update build dependency
+
+ -- soburi <soburi@gmail.com>  Wed, 03 Apr 2019 23:19:48 +0900
+
+ot-br-posix (0.01.00-154-gc799da7-1ubuntu8) bionic; urgency=medium
+
+  * Update build dependency
+
+ -- soburi <soburi@gmail.com>  Wed, 03 Apr 2019 23:16:04 +0900
+
+ot-br-posix (0.01.00-154-gc799da7-1ubuntu7) bionic; urgency=medium
+
+  * Update build dependency
+
+ -- soburi <soburi@gmail.com>  Wed, 03 Apr 2019 23:10:21 +0900
+
+ot-br-posix (0.01.00-154-gc799da7-1ubuntu6) bionic; urgency=medium
+
+  * Update build dependency
+
+ -- soburi <soburi@gmail.com>  Wed, 03 Apr 2019 23:05:30 +0900
+
+ot-br-posix (0.01.00-154-gc799da7-1ubuntu5) bionic; urgency=medium
+
+  * Update build dependency
+
+ -- soburi <soburi@gmail.com>  Wed, 03 Apr 2019 22:59:32 +0900
+
+ot-br-posix (0.01.00-154-gc799da7-1ubuntu4) bionic; urgency=medium
+
+  * Update build dependency
+
+ -- soburi <soburi@gmail.com>  Wed, 03 Apr 2019 22:53:35 +0900
+
+ot-br-posix (0.01.00-154-gc799da7-1ubuntu3) bionic; urgency=medium
+
+  * Correct rules
+
+ -- soburi <soburi@gmail.com>  Wed, 03 Apr 2019 22:43:29 +0900
+
+ot-br-posix (0.01.00-154-gc799da7-1ubuntu2) bionic; urgency=medium
+
+  * Update build dependency
+
+ -- soburi <soburi@gmail.com>  Wed, 03 Apr 2019 22:38:58 +0900
+
+ot-br-posix (0.01.00-154-gc799da7-1ubuntu1) bionic; urgency=medium
+
+  * Initial release (Closes: #1) 
+
+ -- soburi <soburi@gmail.com>  Sun, 31 Mar 2019 09:48:04 +0900
