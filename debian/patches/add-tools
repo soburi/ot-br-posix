@@ -1,0 +1,24 @@
+--- a/tools/CMakeLists.txt
++++ b/tools/CMakeLists.txt
+@@ -37,6 +37,10 @@
+     mbedcrypto
+     mbedx509
+ )
++install(
++    TARGETS pskc
++    DESTINATION bin
++)
+ 
+ add_executable(steering-data
+     steering_data.cpp
+@@ -48,6 +52,10 @@
+     mbedtls
+     mbedcrypto
+ )
++install(
++    TARGETS steering-data
++    DESTINATION bin
++)
+ 
+ if ($ENV{REFERENCE_DEVICE})
+     add_subdirectory(reference_device)

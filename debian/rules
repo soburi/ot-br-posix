@@ -1,0 +1,89 @@
+#!/usr/bin/make -f
+#export DH_VERBOSE = 1
+
+%:
+	dh $@
+
+#-DOT_EXCLUDE_TCPLP_LIB=ON \
+#-DOT_TIME_SYNC=ON \
+#-DOT_DNS_DSO=ON \
+
+override_dh_auto_configure:
+	dh_auto_configure -- -GNinja \
+		-DSOURCE_DATE_EPOCH=\"$(SOURCE_DATE_EPOCH)\" \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+		-DOTBR_DBUS=1 \
+		-DOTBR_MDNS=avahi \
+		-DOTBR_REST=1 \
+		-DOTBR_TREL=1 \
+		-DOTBR_WEB=1 \
+		-DOTBR_DNSSD_DISCOVERY_PROXY=ON \
+		-DOTBR_SRP_ADVERTISING_PROXY=ON \
+		-DOTBR_BACKBONE_ROUTER=ON \
+		-DOTBR_BORDER_AGENT=ON \
+		-DOTBR_BORDER_ROUTING=ON \
+		-DOTBR_DUA_ROUTING=ON \
+		-DOT_THREAD_VERSION=\"1.2\" \
+		-DOT_FTD=1 \
+		-DOT_MTD=1 \
+		-DOT_COMPILE_WARNING_AS_ERROR=ON \
+		\
+		-DOT_ANYCAST_LOCATOR=ON \
+		-DOT_COAP_BLOCK=ON \
+		-DOT_COAP_OBSERVE=ON \
+		-DOT_CHANNEL_MANAGER=ON \
+		-DOT_CHANNEL_MONITOR=ON \
+		-DOT_CHILD_SUPERVISION=ON \
+		-DOT_DATASET_UPDATER=ON \
+		-DOT_DHCP6_CLIENT=ON \
+		-DOT_DHCP6_SERVER=ON \
+		-DOT_DIAGNOSTIC=ON \
+		-DOT_DNS_CLIENT=ON \
+		-DOT_DNSSD=ON \
+		-DOT_ECDSA=ON \
+		-DOT_HISTORY_TRACKER=ON \
+		-DOT_IP6_FRAGM=ON \
+		-DOT_JAM_DETECTION=ON \
+		-DOT_LOG_OUTPUT=PLATFORM_DEFINED \
+		-DOT_FULL_LOGS=ON \
+		-DOT_LINK_METRICS_INITIATOR=ON \
+		-DOT_LINK_RAW=ON \
+		-DOT_MTD_NETDIAG=ON \
+		-DOT_MLE_LONG_ROUTES=ON \
+		-DOT_MULTIPLE_INSTANCE=OFF \
+		-DOT_NETDATA_PUBLISHER=ON \
+		-DOT_NEIGHBOR_DISCOVERY_AGENT=ON \
+		-DOT_PING_SENDER=ON \
+		-DOT_POSIX_MAX_POWER_TABLE=ON \
+		-DOT_SNTP_CLIENT=ON \
+		-DOT_SRP_CLIENT=ON \
+		-DOT_SRP_SERVER=ON \
+		-DOT_RCP_RESTORATION_MAX_COUNT=2 \
+		-DOT_UPTIME=ON \
+		-DOT_REFERENCE_DEVICE=ON \
+		-DOT_COVERAGE=OFF \
+		-B . -S
+
+
+override_dh_fixperms:
+	dh_fixperms
+	chmod 755 debian/otbr-web/usr/libexec/otbr-web/script/*
+	chmod 755 debian/otbr-ncp-state-notifier/usr/sbin/ncp_state_notifier
+
+override_dh_auto_install:
+	dh_auto_install
+	mkdir -p debian/otbr-ncp-state-notifier/usr/sbin/
+	mkdir -p debian/otbr-ncp-state-notifier/etc/default/
+	mkdir -p debian/otbr-ncp-state-notifier/lib/systemd/system/
+	bash -c "shopt -s expand_aliases ; alias sudo= ; . `pwd`/script/_initrc ; . `pwd`/script/_dhcpv6_pd ; export NCP_STATE_NOTIFIER=`pwd`/debian/otbr-ncp-state-notifier/usr/sbin/ncp_state_notifier ; create_ncp_state_notifier_script"
+	bash -c "shopt -s expand_aliases ; alias sudo= ; . `pwd`/script/_initrc ; . `pwd`/script/_dhcpv6_pd ; export NCP_STATE_NOTIFIER_SERVICE=`pwd`/debian/otbr-ncp-state-notifier/lib/systemd/system/ncp_state_notifier.service ; create_ncp_state_notifier_service"
+	cp debian/ncp_state_notifier.default debian/otbr-ncp-state-notifier/etc/default/ncp_state_notifier
+
+override_dh_installsystemd:
+	dh_installsystemd --name=otbr-web
+	dh_installsystemd --name=otbr-agent
+
+override_dh_auto_test:
+
+

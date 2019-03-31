@@ -1,0 +1,50 @@
+--- a/src/utils/CMakeLists.txt
++++ b/src/utils/CMakeLists.txt
+@@ -41,4 +41,6 @@
+ target_link_libraries(otbr-utils PRIVATE
+     otbr-common
+     mbedtls
++    mbedcrypto
++    mbedx509
+ )
+--- a/src/web/CMakeLists.txt
++++ b/src/web/CMakeLists.txt
+@@ -60,6 +60,8 @@
+     openthread-ftd
+     openthread-posix
+     mbedtls
++    mbedcrypto
++    mbedx509
+     ${Boost_LIBRARIES}
+     pthread
+ )
+--- a/tests/unit/CMakeLists.txt
++++ b/tests/unit/CMakeLists.txt
+@@ -45,6 +45,8 @@
+     $<$<BOOL:${CPPUTEST_LIBRARY_DIRS}>:-L$<JOIN:${CPPUTEST_LIBRARY_DIRS}," -L">>
+     ${CPPUTEST_LIBRARIES}
+     mbedtls
++    mbedcrypto
++    mbedx509
+     otbr-common
+     otbr-utils
+     pthread
+--- a/tools/CMakeLists.txt
++++ b/tools/CMakeLists.txt
+@@ -34,6 +34,8 @@
+     otbr-common
+     otbr-utils
+     mbedtls
++    mbedcrypto
++    mbedx509
+ )
+ 
+ add_executable(steering-data
+@@ -44,6 +46,7 @@
+     otbr-common
+     otbr-utils
+     mbedtls
++    mbedcrypto
+ )
+ 
+ if ($ENV{REFERENCE_DEVICE})

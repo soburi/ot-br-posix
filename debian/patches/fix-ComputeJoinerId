@@ -1,0 +1,55 @@
+--- a/src/utils/steering_data.cpp
++++ b/src/utils/steering_data.cpp
+@@ -44,20 +44,25 @@
+     Clear();
+ }
+ 
+-void SteeringData::ComputeJoinerId(const uint8_t *aEui64, uint8_t *aJoinerId)
++int SteeringData::ComputeJoinerId(const uint8_t *aEui64, uint8_t *aJoinerId)
+ {
++    int                    ret                   = 0;
+     const size_t           kSizeHashSha256Output = 32;
+     const size_t           kSizeEui64            = 8;
+     uint8_t                hash[kSizeHashSha256Output];
+     mbedtls_sha256_context sha256;
+ 
+     mbedtls_sha256_init(&sha256);
+-    mbedtls_sha256_starts(&sha256, 0);
+-    mbedtls_sha256_update(&sha256, aEui64, kSizeEui64);
+-    mbedtls_sha256_finish(&sha256, hash);
++    ret = mbedtls_sha256_starts_ret(&sha256, 0);
++    if(!ret) return ret;
++    ret = mbedtls_sha256_update_ret(&sha256, aEui64, kSizeEui64);
++    if(!ret) return ret;
++    ret = mbedtls_sha256_finish_ret(&sha256, hash);
++    if(!ret) return ret;
+ 
+     memcpy(aJoinerId, hash, kSizeJoinerId);
+     aJoinerId[0] |= 2;
++    return 0;
+ }
+ 
+ void SteeringData::ComputeBloomFilter(const uint8_t *aJoinerId)
+--- a/src/utils/steering_data.hpp
++++ b/src/utils/steering_data.hpp
+@@ -97,7 +97,7 @@
+      * @param[out] aJoinerId  A pointer to receive joiner id. This pointer can be the same as @p aEui64.
+      *
+      */
+-    static void ComputeJoinerId(const uint8_t *aEui64, uint8_t *aJoinerId);
++    static int ComputeJoinerId(const uint8_t *aEui64, uint8_t *aJoinerId);
+ 
+     /**
+      * This method returns a pointer to the bloom filter.
+--- a/tools/steering_data.cpp
++++ b/tools/steering_data.cpp
+@@ -58,8 +58,7 @@
+     VerifyOrExit(strlen(aEui64) == otbr::SteeringData::kSizeJoinerId * 2);
+     VerifyOrExit(otbr::Utils::Hex2Bytes(aEui64, aJoinerId, otbr::SteeringData::kSizeJoinerId) ==
+                  otbr::SteeringData::kSizeJoinerId);
+-    otbr::SteeringData::ComputeJoinerId(aJoinerId, aJoinerId);
+-    ret = 0;
++    ret = otbr::SteeringData::ComputeJoinerId(aJoinerId, aJoinerId);
+ 
+ exit:
+     if (ret != 0)

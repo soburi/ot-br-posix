@@ -1,0 +1,3 @@
+#debian/ncp_state_notifier usr/sbin
+#debian/ncp_state_notifier.default etc/default/ncp_state_notifier
+#debian/ncp_state_notifier.service lib/systemd/system/ncp_state_notifier.service

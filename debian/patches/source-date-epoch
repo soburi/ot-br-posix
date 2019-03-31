@@ -1,0 +1,8 @@
+--- a/third_party/openthread/repo/src/core/CMakeLists.txt
++++ b/third_party/openthread/repo/src/core/CMakeLists.txt
+@@ -292,4 +292,5 @@
+ 
+ set_property(SOURCE api/instance_api.cpp
+     APPEND PROPERTY COMPILE_DEFINITIONS "PACKAGE_VERSION=\"${OT_PACKAGE_VERSION}\""
++    APPEND PROPERTY COMPILE_DEFINITIONS "OPENTHREAD_BUILD_DATETIME=${SOURCE_DATE_EPOCH}"
+ )
