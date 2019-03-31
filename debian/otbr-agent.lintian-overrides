@@ -1,0 +1,6 @@
+otbr-agent: no-manual-page usr/sbin/otbr-agent
+otbr-agent: no-manual-page usr/sbin/ot-ctl
+otbr-agent: dbus-policy-excessively-broad etc/dbus-1/system.d/otbr-agent.conf (rule 6) <policy group="root"><allow send_interface="org.freedesktop.DBus.Properties"/>
+otbr-agent: dbus-policy-without-send-destination etc/dbus-1/system.d/otbr-agent.conf (rule 5) <policy group="root"><allow send_interface="io.openthread.BorderRouter"/>
+otbr-agent: dbus-policy-without-send-destination etc/dbus-1/system.d/otbr-agent.conf (rule 6) <policy group="root"><allow send_interface="org.freedesktop.DBus.Properties"/>
+otbr-agent: dbus-policy-without-send-destination etc/dbus-1/system.d/otbr-agent.conf (rule 7) <policy group="root"><allow send_interface="org.freedesktop.DBus.Introspectable"/>
