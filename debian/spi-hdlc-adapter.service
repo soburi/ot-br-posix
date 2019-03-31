@@ -1,0 +1,14 @@
+[Unit]
+Description=SPI-HDLC Adapter
+ConditionPathExists=/usr/sbin/spi-hdlc-adapter
+
+[Service]
+EnvironmentFile=-/etc/default/spi-hdlc-adapter
+KillMode=mixed
+Restart=on-failure
+RestartSec=5
+RestartPreventExitStatus=SIGKILL
+
+[Install]
+WantedBy=multi-user.target
+Alias=spi-hdlc-adapter.service

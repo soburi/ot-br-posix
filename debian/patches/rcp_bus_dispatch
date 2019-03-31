@@ -1,0 +1,177 @@
+--- a/third_party/openthread/repo/src/posix/platform/hdlc_interface.cpp
++++ b/third_party/openthread/repo/src/posix/platform/hdlc_interface.cpp
+@@ -117,8 +117,6 @@
+ 
+ #endif // __APPLE__
+ 
+-#if OPENTHREAD_POSIX_CONFIG_RCP_BUS == OT_POSIX_RCP_BUS_UART
+-
+ using ot::Spinel::SpinelInterface;
+ 
+ namespace ot {
+@@ -717,4 +715,3 @@
+ 
+ } // namespace Posix
+ } // namespace ot
+-#endif // OPENTHREAD_POSIX_CONFIG_RCP_BUS == OT_POSIX_RCP_BUS_UART
+--- a/third_party/openthread/repo/src/posix/platform/hdlc_interface.hpp
++++ b/third_party/openthread/repo/src/posix/platform/hdlc_interface.hpp
+@@ -40,8 +40,6 @@
+ #include "lib/spinel/openthread-spinel-config.h"
+ #include "lib/spinel/spinel_interface.hpp"
+ 
+-#if OPENTHREAD_POSIX_CONFIG_RCP_BUS == OT_POSIX_RCP_BUS_UART
+-
+ namespace ot {
+ namespace Posix {
+ 
+@@ -276,5 +274,4 @@
+ } // namespace Posix
+ } // namespace ot
+ 
+-#endif // OPENTHREAD_POSIX_CONFIG_RCP_BUS == OT_POSIX_RCP_BUS_UART
+ #endif // POSIX_APP_HDLC_INTERFACE_HPP_
+--- a/third_party/openthread/repo/src/posix/platform/radio.cpp
++++ b/third_party/openthread/repo/src/posix/platform/radio.cpp
+@@ -38,23 +38,56 @@
+ #include "common/code_utils.hpp"
+ #include "common/new.hpp"
+ #include "lib/spinel/radio_spinel.hpp"
++#include "lib/spinel/spinel_interface.hpp"
+ #include "posix/platform/radio.hpp"
+ 
+-#if OPENTHREAD_POSIX_CONFIG_RCP_BUS == OT_POSIX_RCP_BUS_UART
+ #include "hdlc_interface.hpp"
+-
+-#if OPENTHREAD_POSIX_VIRTUAL_TIME
+-static ot::Spinel::RadioSpinel<ot::Posix::HdlcInterface, VirtualTimeEvent> sRadioSpinel;
+-#else
+-static ot::Spinel::RadioSpinel<ot::Posix::HdlcInterface, RadioProcessContext> sRadioSpinel;
+-#endif // OPENTHREAD_POSIX_VIRTUAL_TIME
+-#elif OPENTHREAD_POSIX_CONFIG_RCP_BUS == OT_POSIX_RCP_BUS_SPI
+ #include "spi_interface.hpp"
+ 
+-static ot::Spinel::RadioSpinel<ot::Posix::SpiInterface, RadioProcessContext> sRadioSpinel;
+-#else
+-#error "OPENTHREAD_POSIX_CONFIG_RCP_BUS only allows OT_POSIX_RCP_BUS_UART and OT_POSIX_RCP_BUS_SPI!"
++namespace {
++class SpinelInterfaceDispatcher
++{
++#define SPINEL_DISPATCH0(spnfunc) (is_hdlc() ? mHdlcInterface.spnfunc() : mSpiInterface.spnfunc() )
++#define SPINEL_DISPATCH(spnfunc, ...) (is_hdlc() ? mHdlcInterface.spnfunc(__VA_ARGS__) : mSpiInterface.spnfunc(__VA_ARGS__) )
++
++    ot::Posix::HdlcInterface mHdlcInterface;
++    ot::Posix::SpiInterface mSpiInterface;
++
++    inline bool is_hdlc() const { return mIsHdlc; }
++    bool mIsHdlc;
++public:
++    SpinelInterfaceDispatcher(ot::Spinel::SpinelInterface::ReceiveFrameCallback aCallback,
++                           void *                                            aCallbackContext,
++                           ot::Spinel::SpinelInterface::RxFrameBuffer &      aFrameBuffer)
++        : mHdlcInterface(aCallback, aCallbackContext, aFrameBuffer)
++        , mSpiInterface(aCallback, aCallbackContext, aFrameBuffer)
++    {
++    }
++
++    inline otError Init(const ot::Url::Url &aRadioUrl)
++    {
++        if (strstr(aRadioUrl.GetProtocol(), "+hdlc") != nullptr) { mIsHdlc = true; }
++        else if (strstr(aRadioUrl.GetProtocol(), "+spi") != nullptr) { mIsHdlc = false; }
++        else { return OT_ERROR_INVALID_ARGS; }
++
++        return SPINEL_DISPATCH(Init, aRadioUrl);
++    }
++    inline void Deinit(void) { SPINEL_DISPATCH0(Deinit); }
++    inline otError SendFrame(const uint8_t *aFrame, uint16_t aLength) { return SPINEL_DISPATCH(SendFrame, aFrame, aLength); }
++    inline otError WaitForFrame(uint64_t aTimeoutUs) { return SPINEL_DISPATCH(WaitForFrame, aTimeoutUs); }
++    inline void UpdateFdSet(fd_set &aReadFdSet, fd_set &aWriteFdSet, int &aMaxFd, struct timeval &aTimeout) { SPINEL_DISPATCH(UpdateFdSet, aReadFdSet, aWriteFdSet, aMaxFd, aTimeout); }
++    inline void Process(const RadioProcessContext &aContext) { SPINEL_DISPATCH(Process, aContext); }
++#if OPENTHREAD_POSIX_VIRTUAL_TIME
++    inline void Process(const struct VirtualTimeEvent *aEvent) { mHdlcInterface.Process(aEvent); }
+ #endif
++    inline uint32_t GetBusSpeed(void) const { return SPINEL_DISPATCH0(GetBusSpeed); }
++    inline void OnRcpReset(void) { SPINEL_DISPATCH0(OnRcpReset); }
++    inline otError ResetConnection(void) { return SPINEL_DISPATCH0(ResetConnection); }
++
++};
++}
++
++static ot::Spinel::RadioSpinel<SpinelInterfaceDispatcher, RadioProcessContext> sRadioSpinel;
+ 
+ namespace ot {
+ namespace Posix {
+--- a/third_party/openthread/repo/src/posix/platform/radio_url.cpp
++++ b/third_party/openthread/repo/src/posix/platform/radio_url.cpp
+@@ -37,10 +37,9 @@
+ 
+ const char *otSysGetRadioUrlHelpString(void)
+ {
+-#if OPENTHREAD_POSIX_CONFIG_RCP_BUS == OT_POSIX_RCP_BUS_SPI
+ #define OT_RADIO_URL_HELP_BUS                                                                                  \
+     "    spinel+spi://${PATH_TO_SPI_DEVICE}?${Parameters}\n"                                                   \
+-    "Parameters:\n"                                                                                            \
++    "Parameters for SPI:\n"                                                                                            \
+     "    gpio-int-device[=gpio-device-path]\n"                                                                 \
+     "                                  Specify a path to the Linux sysfs-exported GPIO device for the\n"       \
+     "                                  `I̅N̅T̅` pin. If not specified, `SPI` interface will fall back to\n" \
+@@ -61,23 +60,18 @@
+     "    spi-align-allowance[=n]       Specify the maximum number of 0xFF bytes to clip from start of\n"       \
+     "                                  MISO frame. Max value is 16.\n"                                         \
+     "    spi-small-packet=[n]          Specify the smallest packet we can receive in a single transaction.\n"  \
+-    "                                  (larger packets will require two transactions). Default value is 32.\n"
+-
+-#else
+-
+-#define OT_RADIO_URL_HELP_BUS                                                                        \
++    "                                  (larger packets will require two transactions). Default value is 32.\n" \
++    "\n" \
+     "    forkpty-arg[=argument string]  Command line arguments for subprocess, can be repeated.\n"   \
+     "    spinel+hdlc+uart://${PATH_TO_UART_DEVICE}?${Parameters} for real uart device\n"             \
+     "    spinel+hdlc+forkpty://${PATH_TO_UART_DEVICE}?${Parameters} for forking a pty subprocess.\n" \
+-    "Parameters:\n"                                                                                  \
++    "Parameters for UART:\n"                                                                                  \
+     "    uart-parity[=even|odd]         Uart parity config, optional.\n"                             \
+     "    uart-stop[=number-of-bits]     Uart stop bit, default is 1.\n"                              \
+     "    uart-baudrate[=baudrate]       Uart baud rate, default is 115200.\n"                        \
+     "    uart-flow-control              Enable flow control, disabled by default.\n"                 \
+     "    uart-reset                     Reset connection after hard resetting RCP(USB CDC ACM).\n"
+ 
+-#endif // OPENTHREAD_POSIX_CONFIG_RCP_BUS == OT_POSIX_RCP_BUS_SPI
+-
+ #if OPENTHREAD_POSIX_CONFIG_MAX_POWER_TABLE_ENABLE
+ #define OT_RADIO_URL_HELP_MAX_POWER_TABLE                                                                  \
+     "    max-power-table               Max power for channels in ascending order separated by commas,\n"   \
+--- a/third_party/openthread/repo/src/posix/platform/spi_interface.cpp
++++ b/third_party/openthread/repo/src/posix/platform/spi_interface.cpp
+@@ -54,7 +54,6 @@
+ #include <sys/types.h>
+ #include <sys/ucontext.h>
+ 
+-#if OPENTHREAD_POSIX_CONFIG_RCP_BUS == OT_POSIX_RCP_BUS_SPI
+ #include <linux/gpio.h>
+ #include <linux/ioctl.h>
+ #include <linux/spi/spidev.h>
+@@ -840,5 +839,3 @@
+ }
+ } // namespace Posix
+ } // namespace ot
+-
+-#endif // OPENTHREAD_POSIX_CONFIG_RCP_BUS == OT_POSIX_RCP_BUS_SPI
+--- a/third_party/openthread/repo/src/posix/platform/spi_interface.hpp
++++ b/third_party/openthread/repo/src/posix/platform/spi_interface.hpp
+@@ -42,8 +42,6 @@
+ 
+ #include <openthread/openthread-system.h>
+ 
+-#if OPENTHREAD_POSIX_CONFIG_RCP_BUS == OT_POSIX_RCP_BUS_SPI
+-
+ #include "ncp/ncp_spi.hpp"
+ 
+ namespace ot {
+@@ -259,5 +257,4 @@
+ } // namespace Posix
+ } // namespace ot
+ 
+-#endif // OPENTHREAD_POSIX_CONFIG_RCP_BUS == OT_POSIX_RCP_BUS_SPI
+ #endif // POSIX_APP_SPI_INTERFACE_HPP_
