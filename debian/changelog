@@ -1,0 +1,5 @@
+ot-br-posix (0.01.00-154-gc799da7-1ubuntu1) bionic; urgency=medium
+
+  * Initial release (Closes: #1) 
+
+ -- soburi <soburi@gmail.com>  Sun, 31 Mar 2019 09:48:04 +0900
