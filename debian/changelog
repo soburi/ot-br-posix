@@ -1,3 +1,69 @@
+ot-br-posix (0.01.00-154-gc799da7-1ubuntu12) bionic; urgency=medium
+
+  * Update build dependency
+
+ -- soburi <soburi@gmail.com>  Thu, 04 Apr 2019 00:08:44 +0900
+
+ot-br-posix (0.01.00-154-gc799da7-1ubuntu11) bionic; urgency=medium
+
+  * Update build dependency
+
+ -- soburi <soburi@gmail.com>  Thu, 04 Apr 2019 00:01:10 +0900
+
+ot-br-posix (0.01.00-154-gc799da7-1ubuntu10) bionic; urgency=medium
+
+  * Update build dependency
+
+ -- soburi <soburi@gmail.com>  Wed, 03 Apr 2019 23:23:08 +0900
+
+ot-br-posix (0.01.00-154-gc799da7-1ubuntu9) bionic; urgency=medium
+
+  * Update build dependency
+
+ -- soburi <soburi@gmail.com>  Wed, 03 Apr 2019 23:19:48 +0900
+
+ot-br-posix (0.01.00-154-gc799da7-1ubuntu8) bionic; urgency=medium
+
+  * Update build dependency
+
+ -- soburi <soburi@gmail.com>  Wed, 03 Apr 2019 23:16:04 +0900
+
+ot-br-posix (0.01.00-154-gc799da7-1ubuntu7) bionic; urgency=medium
+
+  * Update build dependency
+
+ -- soburi <soburi@gmail.com>  Wed, 03 Apr 2019 23:10:21 +0900
+
+ot-br-posix (0.01.00-154-gc799da7-1ubuntu6) bionic; urgency=medium
+
+  * Update build dependency
+
+ -- soburi <soburi@gmail.com>  Wed, 03 Apr 2019 23:05:30 +0900
+
+ot-br-posix (0.01.00-154-gc799da7-1ubuntu5) bionic; urgency=medium
+
+  * Update build dependency
+
+ -- soburi <soburi@gmail.com>  Wed, 03 Apr 2019 22:59:32 +0900
+
+ot-br-posix (0.01.00-154-gc799da7-1ubuntu4) bionic; urgency=medium
+
+  * Update build dependency
+
+ -- soburi <soburi@gmail.com>  Wed, 03 Apr 2019 22:53:35 +0900
+
+ot-br-posix (0.01.00-154-gc799da7-1ubuntu3) bionic; urgency=medium
+
+  * Correct rules
+
+ -- soburi <soburi@gmail.com>  Wed, 03 Apr 2019 22:43:29 +0900
+
+ot-br-posix (0.01.00-154-gc799da7-1ubuntu2) bionic; urgency=medium
+
+  * Update build dependency
+
+ -- soburi <soburi@gmail.com>  Wed, 03 Apr 2019 22:38:58 +0900
+
 ot-br-posix (0.01.00-154-gc799da7-1ubuntu1) bionic; urgency=medium
 
   * Initial release (Closes: #1) 
