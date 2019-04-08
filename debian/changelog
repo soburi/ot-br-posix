@@ -1,3 +1,9 @@
+ot-br-posix (0.01.00-154-gc799da7-1ubuntu15) bionic; urgency=medium
+
+  * Compatible with stretch
+
+ -- soburi <soburi@gmail.com>  Mon, 08 Apr 2019 23:08:22 +0900
+
 ot-br-posix (0.01.00-154-gc799da7-1ubuntu14) bionic; urgency=medium
 
   * Remove wpantund.service
