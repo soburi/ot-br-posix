@@ -9,3 +9,4 @@ ot-br-posix source: source-contains-prebuilt-windows-binary third_party/openthre
 ot-br-posix source: source-contains-prebuilt-windows-binary third_party/openthread/repo/tools/windows/x86/otinstall.exe
 ot-br-posix source: license-problem-non-free-RFC-BCP78 third_party/openthread/repo/doc/draft-rquattle-spinel-unified.html
 ot-br-posix source: license-problem-non-free-RFC-BCP78 third_party/openthread/repo/doc/draft-rquattle-spinel-unified.txt
+ot-br-posix source: package-needs-versioned-debhelper-build-depends 11

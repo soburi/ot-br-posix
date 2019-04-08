@@ -10,6 +10,7 @@ override_dh_autoreconf:
 override_dh_fixperms:
 	dh_fixperms
 	cp -rfp script debian/ot-br-posix/usr/share/ot-br-posix/
+	rm debian/ot-br-posix/lib/systemd/system/wpantund.service
 	rm -rf debian/ot-br-posix/usr/lib
 
 
