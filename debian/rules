@@ -9,13 +9,13 @@ override_dh_autoreconf:
 
 override_dh_fixperms:
 	dh_fixperms
-	mkdir -p debian/ot-br-posix/usr/libexec/ot-br-posix/
-	cp -rfp script debian/ot-br-posix/usr/libexec/ot-br-posix/
 	chmod 755 debian/ot-br-posix/usr/libexec/ot-br-posix/script/*
+	chmod 755 debian/ot-br-posix/usr/bin/ncp_state_notifier
+	chmod 644 debian/ot-br-posix/etc/default/ncp_state_notifier
 	rm debian/ot-br-posix/lib/systemd/system/wpantund.service
-	rm -rf debian/ot-br-posix/usr/lib
 
-
+override_dh_installsystemd:
+	dh_installsystemd --name=ncp_state_notifier
 
 override_dh_auto_test:
 
