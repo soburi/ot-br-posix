@@ -1,0 +1,12 @@
+[Unit]
+Description=Daemon call scripts on every NCP state change
+After=wpantund.service
+ConditionPathExists=/usr/bin/ncp_state_notifier
+
+[Service]
+ExecStart=/bin/sh /usr/bin/ncp_state_notifier
+PIDFile=/tmp/ncp_state_notifier.pid
+KillMode=control-group
+
+[Install]
+WantedBy=multi-user.target

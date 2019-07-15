@@ -1,3 +1,15 @@
+ot-br-posix (0.01.00-178-g7ca84e4-1ubuntu3) disco; urgency=medium
+
+  * remove otbr-nat44
+
+ -- soburi <soburi@gmail.com>  Sat, 27 Jul 2019 15:19:28 +0900
+
+ot-br-posix (0.01.00-178-g7ca84e4-1ubuntu2) disco; urgency=medium
+
+  * Add ncp_state_notifier and otbr-nat44
+
+ -- soburi <soburi@gmail.com>  Thu, 18 Jul 2019 00:23:04 +0900
+
 ot-br-posix (0.01.00-178-g7ca84e4-1ubuntu1) disco; urgency=medium
 
   * Bump to g7ca84e4
