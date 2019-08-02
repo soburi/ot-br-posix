@@ -1,3 +1,9 @@
+ot-br-posix (0.01.00-190-ge3a6453-1ubuntu1) disco; urgency=medium
+
+  * add otbr-web default
+
+ -- soburi <soburi@gmail.com>  Fri, 02 Aug 2019 20:51:17 +0900
+
 ot-br-posix (0.01.00-178-g7ca84e4-1ubuntu3) disco; urgency=medium
 
   * remove otbr-nat44
