@@ -9,7 +9,7 @@ override_dh_autoreconf:
 
 override_dh_auto_install:
 	dh_auto_install
-	rm -r debian/ot-br-posix/lib/
+	mv -f debian/ot-br-posix/usr/lib/systemd/system/* debian/ot-br-posix/usr/lib/systemd/
 
 override_dh_fixperms:
 	dh_fixperms

@@ -1,3 +1,9 @@
+ot-br-posix (0.01.00-206-g95ac6cc-1ubuntu1) disco; urgency=medium
+
+  * Bump to g95ac6cc
+
+ -- soburi <soburi@gmail.com>  Sun, 02 Feb 2020 18:01:22 +0900
+
 ot-br-posix (0.01.00-190-ge3a6453-1ubuntu1) disco; urgency=medium
 
   * add otbr-web default
