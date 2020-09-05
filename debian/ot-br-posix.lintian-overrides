@@ -1,6 +1,8 @@
+ot-br-posix: dbus-policy-excessively-broad etc/dbus-1/system.d/otbr-agent.conf <policy group="root"><allow send_interface="org.freedesktop.DBus.Properties"/>
+ot-br-posix: binary-without-manpage usr/sbin/ncp_state_notifier
+ot-br-posix: binary-without-manpage usr/sbin/ot-ctl
 ot-br-posix: binary-without-manpage usr/sbin/otbr-agent
 ot-br-posix: binary-without-manpage usr/sbin/otbr-web
-ot-br-posix: binary-without-manpage usr/bin/pskc
-ot-br-posix: binary-without-manpage usr/bin/steering-data
-ot-br-posix: binary-without-manpage usr/bin/otbr-commissioner
-ot-br-posix: binary-without-manpage usr/bin/ncp_state_notifier
+ot-br-posix: dbus-policy-without-send-destination etc/dbus-1/system.d/otbr-agent.conf <policy group="root"><allow send_interface="io.openthread.BorderRouter"/>
+ot-br-posix: dbus-policy-without-send-destination etc/dbus-1/system.d/otbr-agent.conf <policy group="root"><allow send_interface="org.freedesktop.DBus.Introspectable"/>
+ot-br-posix: dbus-policy-without-send-destination etc/dbus-1/system.d/otbr-agent.conf <policy group="root"><allow send_interface="org.freedesktop.DBus.Properties"/>
