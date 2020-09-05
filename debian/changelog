@@ -1,3 +1,9 @@
+ot-br-posix (0.01.00-221-gea9cd69-1ubuntu1) focal; urgency=medium
+
+  * Bump to gea9cd69
+
+ -- Tokita Hiroshi <soburi@gmail.com>  Sat, 05 Sep 2020 08:50:10 +0900
+
 ot-br-posix (0.01.00-206-g95ac6cc-1ubuntu1) disco; urgency=medium
 
   * Bump to g95ac6cc
