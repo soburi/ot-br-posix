@@ -4,17 +4,13 @@
 %:
 	dh $@
 
-override_dh_autoreconf:
-	./bootstrap
-
-override_dh_auto_install:
-	dh_auto_install
-	mv -f debian/ot-br-posix/usr/lib/systemd/system/* debian/ot-br-posix/usr/lib/systemd/
+override_dh_auto_configure:
+	dh_auto_configure -- -DOTBR_DBUS=1 -DOTBR_MDNS=avahi -DOTBR_REST=1 -DOTBR_WEB=1
 
 override_dh_fixperms:
 	dh_fixperms
 	chmod 755 debian/ot-br-posix/usr/libexec/ot-br-posix/script/*
-	chmod 755 debian/ot-br-posix/usr/bin/ncp_state_notifier
+	chmod 755 debian/ot-br-posix/usr/sbin/ncp_state_notifier
 	chmod 644 debian/ot-br-posix/etc/default/ncp_state_notifier
 
 override_dh_installsystemd:
