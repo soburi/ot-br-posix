@@ -1,3 +1,9 @@
+ot-br-posix (0.01.00-221-gea9cd69-1ubuntu2) focal; urgency=medium
+
+  * libreadline-dev
+
+ -- Tokita Hiroshi <soburi@gmail.com>  Sat, 05 Sep 2020 18:37:45 +0900
+
 ot-br-posix (0.01.00-221-gea9cd69-1ubuntu1) focal; urgency=medium
 
   * Bump to gea9cd69
