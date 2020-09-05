@@ -1,3 +1,9 @@
+ot-br-posix (0.01.00-221-gea9cd69-1ubuntu3) disco; urgency=medium
+
+  * disco
+
+ -- Tokita Hiroshi <soburi@gmail.com>  Sat, 05 Sep 2020 21:09:11 +0900
+
 ot-br-posix (0.01.00-221-gea9cd69-1ubuntu2) focal; urgency=medium
 
   * libreadline-dev
