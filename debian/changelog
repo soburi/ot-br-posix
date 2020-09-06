@@ -1,3 +1,9 @@
+ot-br-posix (0.01.00-221-gea9cd69-1ubuntu4) focal; urgency=medium
+
+  * correct Build-Depends
+
+ -- Tokita Hiroshi <soburi@gmail.com>  Sun, 06 Sep 2020 10:18:58 +0900
+
 ot-br-posix (0.01.00-221-gea9cd69-1ubuntu3) disco; urgency=medium
 
   * disco
