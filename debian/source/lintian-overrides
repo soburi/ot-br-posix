@@ -7,4 +7,3 @@ ot-br-posix source: source-is-missing third_party/d3js/repo/test/geo/circle-test
 ot-br-posix source: source-is-missing third_party/d3js/repo/test/geo/graticule-test.js line length is 609 characters (>512)
 ot-br-posix source: source-is-missing third_party/d3js/repo/test/geo/path-test.js line length is 1006 characters (>512)
 ot-br-posix source: source-is-missing third_party/d3js/repo/test/svg/line-test.js line length is 517 characters (>512)
-ot-br-posix source: package-needs-versioned-debhelper-build-depends 11
