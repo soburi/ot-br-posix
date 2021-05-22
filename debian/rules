@@ -5,13 +5,13 @@
 	dh $@
 
 override_dh_auto_configure:
-	dh_auto_configure -- -DOTBR_DBUS=1 -DOTBR_MDNS=avahi -DOTBR_REST=1 -DOTBR_WEB=1
+	dh_auto_configure -- -GNinja -DOTBR_DBUS=1 -DOTBR_MDNS=avahi -DOTBR_REST=1 -DOTBR_WEB=1
 
 override_dh_fixperms:
 	dh_fixperms
-	chmod 755 debian/ot-br-posix/usr/libexec/ot-br-posix/script/*
-	chmod 755 debian/ot-br-posix/usr/sbin/ncp_state_notifier
-	chmod 644 debian/ot-br-posix/etc/default/ncp_state_notifier
+	chmod 755 debian/otbr-web/usr/libexec/otbr-web/script/*
+	chmod 755 debian/otbr-web/usr/sbin/ncp_state_notifier
+	chmod 644 debian/otbr-web/etc/default/ncp_state_notifier
 
 override_dh_installsystemd:
 	dh_installsystemd --name=ncp_state_notifier

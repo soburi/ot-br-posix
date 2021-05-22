@@ -1,6 +1,6 @@
 #!/usr/bin/dh-exec
 
-script/* usr/libexec/ot-br-posix/script/
+script/* usr/libexec/otbr-web/script/
 debian/ncp_state_notifier usr/sbin
 debian/ncp_state_notifier.default => etc/default/ncp_state_notifier
 debian/otbr-web.default => etc/default/otbr-web
