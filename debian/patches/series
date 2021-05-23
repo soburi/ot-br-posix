@@ -1,1 +1,3 @@
+suppress_npm_install
+files_from_npm_repository
 remove_timedate

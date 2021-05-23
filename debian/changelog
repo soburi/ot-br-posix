@@ -1,3 +1,9 @@
+ot-br-posix (20180819-429-gf43ccf60b-1ubuntu3) hirsute; urgency=medium
+
+  * update patches
+
+ -- Tokita Hiroshi <soburi@gmail.com>  Sun, 23 May 2021 12:14:28 +0900
+
 ot-br-posix (20180819-429-gf43ccf60b-1ubuntu2) hirsute; urgency=medium
 
   * add ninja to build-dep
