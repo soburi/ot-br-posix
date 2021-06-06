@@ -1,3 +1,9 @@
+ot-br-posix (20180819-442-gaa75a901a-1ubuntu2) hirsute; urgency=medium
+
+  * re-upload
+
+ -- Tokita Hiroshi <soburi@gmail.com>  Sun, 06 Jun 2021 22:27:26 +0900
+
 ot-br-posix (20180819-442-gaa75a901a-1ubuntu1) hirsute; urgency=medium
 
   * bump to gaa75a901a
