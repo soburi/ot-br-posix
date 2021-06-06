@@ -1,0 +1,5 @@
+#!/usr/bin/dh-exec
+
+etc/default/otbr-agent
+usr/sbin/otbr-agent
+lib/systemd/system/otbr-agent.service
