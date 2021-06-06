@@ -28,6 +28,12 @@ Description: OpenThread Border Router, a Thread border router for POSIX-based pl
  More information about Thread can be found at threadgroup.org.
  Thread is a registered trademark of the Thread Group, Inc.
 
+Package: otbr-agent
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Agent for OpenThread Border Router
+ OpenThread Border Router Agent
+
 Package: otbr-tools
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
