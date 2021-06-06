@@ -10,7 +10,7 @@ Vcs-Git: https://github.com/soburi/ot-br-posix
 
 Package: otbr-web
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, wpantund, rsyslog, dbus, avahi-daemon, python3
+Depends: ${shlibs:Depends}, ${misc:Depends}, rsyslog, dbus, avahi-daemon, python3
 Description: OpenThread Border Router, a Thread border router for POSIX-based platforms
  OpenThread's implementation of a Border Router is called
  OpenThread Border Router (OTBR).
@@ -27,3 +27,9 @@ Description: OpenThread Border Router, a Thread border router for POSIX-based pl
   - Docker support
  More information about Thread can be found at threadgroup.org.
  Thread is a registered trademark of the Thread Group, Inc.
+
+Package: otbr-tools
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Tools for OpenThread Border Router
+ small utils for OpenThread Border Router

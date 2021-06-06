@@ -5,3 +5,4 @@ ot-agent-compile-opts
 disable-third-party
 cjson-include
 fix-ComputeJoinerId
+add-tools

@@ -1,5 +1,6 @@
 #!/usr/bin/dh-exec
 
+usr/sbin/*
 script/* usr/libexec/otbr-web/script/
 debian/ncp_state_notifier usr/sbin
 debian/ncp_state_notifier.default => etc/default/ncp_state_notifier
