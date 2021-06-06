@@ -1,7 +1,3 @@
-otbr-web: dbus-policy-excessively-broad etc/dbus-1/system.d/otbr-agent.conf <policy group="root"><allow send_interface="org.freedesktop.DBus.Properties"/>
-otbr-web: binary-without-manpage usr/sbin/ncp_state_notifier
-otbr-web: binary-without-manpage usr/sbin/otbr-agent
-otbr-web: binary-without-manpage usr/sbin/otbr-web
-otbr-web: dbus-policy-without-send-destination etc/dbus-1/system.d/otbr-agent.conf <policy group="root"><allow send_interface="io.openthread.BorderRouter"/>
-otbr-web: dbus-policy-without-send-destination etc/dbus-1/system.d/otbr-agent.conf <policy group="root"><allow send_interface="org.freedesktop.DBus.Introspectable"/>
-otbr-web: dbus-policy-without-send-destination etc/dbus-1/system.d/otbr-agent.conf <policy group="root"><allow send_interface="org.freedesktop.DBus.Properties"/>
+otbr-web: no-manual-page usr/sbin/ncp_state_notifier
+otbr-web: no-manual-page usr/sbin/otbr-agent
+otbr-web: no-manual-page usr/sbin/otbr-web

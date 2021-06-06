@@ -1,3 +1,9 @@
+ot-br-posix (20180819-442-gaa75a901a-1ubuntu4) hirsute; urgency=medium
+
+  * add tools
+
+ -- Tokita Hiroshi <soburi@gmail.com>  Mon, 07 Jun 2021 01:03:24 +0900
+
 ot-br-posix (20180819-442-gaa75a901a-1ubuntu3) hirsute; urgency=medium
 
   * patch for ComputeJoinerId
