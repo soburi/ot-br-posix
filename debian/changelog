@@ -1,3 +1,9 @@
+ot-br-posix (20180819-429-gf43ccf60b-1ubuntu4) hirsute; urgency=medium
+
+  * use libopenthread-dev
+
+ -- Tokita Hiroshi <soburi@gmail.com>  Sun, 06 Jun 2021 20:55:40 +0900
+
 ot-br-posix (20180819-429-gf43ccf60b-1ubuntu3) hirsute; urgency=medium
 
   * update patches

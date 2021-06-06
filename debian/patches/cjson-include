@@ -1,0 +1,14 @@
+--- a/src/rest/CMakeLists.txt
++++ b/src/rest/CMakeLists.txt
+@@ -36,6 +36,11 @@
+     response.cpp
+ )
+ 
++target_include_directories(otbr-rest
++    PRIVATE
++    	/usr/include/cjson
++)
++
+ target_link_libraries(otbr-rest
+     PUBLIC
+         http_parser
