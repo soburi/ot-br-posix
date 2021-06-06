@@ -1,3 +1,9 @@
+ot-br-posix (20180819-442-gaa75a901a-1ubuntu5) hirsute; urgency=medium
+
+  * correct service file install
+
+ -- Tokita Hiroshi <soburi@gmail.com>  Mon, 07 Jun 2021 08:15:53 +0900
+
 ot-br-posix (20180819-442-gaa75a901a-1ubuntu4) hirsute; urgency=medium
 
   * add tools
