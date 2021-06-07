@@ -2,6 +2,7 @@
 
 debian/otbr-web.default => etc/default/otbr-web
 usr/sbin/otbr-web
+usr/share/otbr-web/*/*
 lib/systemd/system/otbr-web.service
 
 script/* usr/libexec/otbr-web/script/
