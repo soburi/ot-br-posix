@@ -1,10 +1,7 @@
 #!/usr/bin/dh-exec
 
-debian/otbr-web.default => etc/default/otbr-web
 usr/sbin/otbr-web
 usr/share/otbr-web/*/*
 lib/systemd/system/otbr-web.service
 
 script/* usr/libexec/otbr-web/script/
-debian/ncp_state_notifier usr/sbin
-debian/ncp_state_notifier.default => etc/default/ncp_state_notifier

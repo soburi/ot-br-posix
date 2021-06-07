@@ -2,11 +2,17 @@ Source: ot-br-posix
 Section: net
 Priority: optional
 Maintainer: TOKITA Hiroshi <tokita.hiroshi@gmail.com>
-Build-Depends: debhelper (>= 11), git, exuberant-ctags, pkg-config, libtool-bin, libdbus-1-dev, libboost-dev, libboost-filesystem-dev, libboost-system-dev, libavahi-client-dev, libjsoncpp-dev, libreadline-dev, dh-exec, cpputest, cmake, npm, ninja-build, libopenthread-dev, libcjson-dev, libhttp-parser-dev, libmbedtls-openthread-dev
+Build-Depends: debhelper (>= 11), git, exuberant-ctags, pkg-config, libtool-bin, libdbus-1-dev, libboost-dev, libboost-filesystem-dev, libboost-system-dev, libavahi-client-dev, libjsoncpp-dev, libreadline-dev, dh-exec, cpputest, cmake, npm, ninja-build, libnetfilter-queue-dev
 Standards-Version: 4.1.3
 Homepage: https://openthread.io
 Vcs-Browser: https://github.com/soburi/ot-br-posix
 Vcs-Git: https://github.com/soburi/ot-br-posix
+
+Package: ot-br-posix
+Architecture: all
+Depends: ${misc:Depends}, otbr-web, otbr-agent, otbr-tools, otbr-ncp-state-notifier, ot-ctl
+Description: set of package of ot-br-posix
+ All package install ot-br-posix
 
 Package: otbr-web
 Architecture: any
@@ -32,7 +38,7 @@ Description: OpenThread Border Router, a Thread border router for POSIX-based pl
 Package: otbr-agent
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Suggests: otbr-web
+Suggests: otbr-web, ot-ctl
 Description: Agent for OpenThread Border Router
  OpenThread Border Router Agent
 
@@ -41,3 +47,17 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Tools for OpenThread Border Router
  small utils for OpenThread Border Router
+
+Package: otbr-ncp-state-notifier
+Architecture: any
+Suggests: otbr-agent
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: OpenThread control
+ script runner daemon
+
+Package: ot-ctl
+Architecture: any
+Suggests: otbr-agent
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: OpenThread control
+ cli-tools for otbr-agent
