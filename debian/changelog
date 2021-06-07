@@ -1,3 +1,9 @@
+ot-br-posix (20180819-443-ge6ec05260-1ubuntu9) hirsute; urgency=medium
+
+  * add build dependencies
+
+ -- Tokita Hiroshi <soburi@gmail.com>  Tue, 08 Jun 2021 08:14:48 +0900
+
 ot-br-posix (20180819-443-ge6ec05260-1ubuntu8) hirsute; urgency=medium
 
   * all package create from ot-br-posix
