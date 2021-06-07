@@ -1,8 +1,6 @@
 suppress_npm_install
 files_from_npm_repository
+source-date-epoch
 mbedtls-libraries
-ot-agent-compile-opts
-disable-third-party
-cjson-include
-fix-ComputeJoinerId
 add-tools
+fix-ComputeJoinerId

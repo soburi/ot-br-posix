@@ -1,3 +1,9 @@
+ot-br-posix (20180819-443-ge6ec05260-1ubuntu8) hirsute; urgency=medium
+
+  * all package create from ot-br-posix
+
+ -- Tokita Hiroshi <soburi@gmail.com>  Tue, 08 Jun 2021 07:54:59 +0900
+
 ot-br-posix (20180819-442-gaa75a901a-1ubuntu7) hirsute; urgency=medium
 
   * add resources

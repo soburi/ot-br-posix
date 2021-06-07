@@ -5,3 +5,6 @@ ot-br-posix source: source-is-missing src/web/web-service/frontend/node_modules/
 ot-br-posix source: source-is-missing src/web/web-service/frontend/node_modules/angular/angular.min.js
 ot-br-posix source: source-is-missing src/web/web-service/frontend/node_modules/d3/d3.min.js
 ot-br-posix source: source-is-missing src/web/web-service/frontend/node_modules/material-design-lite/material.min.js
+ot-br-posix source: maintainer-script-lacks-debhelper-token debian/otbr-ncp-state-notifier.postinst
+ot-br-posix source: maintainer-script-lacks-debhelper-token debian/otbr-ncp-state-notifier.postrm
+ot-br-posix source: maintainer-script-lacks-debhelper-token debian/otbr-ncp-state-notifier.prerm
