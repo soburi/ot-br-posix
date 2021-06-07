@@ -1,3 +1,2 @@
 otbr-web: no-manual-page usr/sbin/ncp_state_notifier
-otbr-web: no-manual-page usr/sbin/otbr-agent
 otbr-web: no-manual-page usr/sbin/otbr-web

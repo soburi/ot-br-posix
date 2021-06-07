@@ -11,6 +11,7 @@ Vcs-Git: https://github.com/soburi/ot-br-posix
 Package: otbr-web
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, rsyslog, dbus, avahi-daemon, python3
+Suggests: otbr-agent
 Description: OpenThread Border Router, a Thread border router for POSIX-based platforms
  OpenThread's implementation of a Border Router is called
  OpenThread Border Router (OTBR).
@@ -31,6 +32,7 @@ Description: OpenThread Border Router, a Thread border router for POSIX-based pl
 Package: otbr-agent
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
+Suggests: otbr-web
 Description: Agent for OpenThread Border Router
  OpenThread Border Router Agent
 
