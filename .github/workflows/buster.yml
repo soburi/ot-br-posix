@@ -10,9 +10,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: find
-        run: |
-          find .
+      - name: checkout
+      - uses: actions/checkout@v2
+        with:
+        submodules: recursive
+
       - name: Build Debian package
         uses: dawidd6/action-debian-package@v1
         with:
