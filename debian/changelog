@@ -1,3 +1,9 @@
+ot-br-posix (20180819-481-g7992996ef-1ubuntu1) focal; urgency=medium
+
+  * for 20.04
+
+ -- Tokita Hiroshi <soburi@gmail.com>  Sat, 17 Jul 2021 08:39:45 -0700
+
 ot-br-posix (20180819-443-ge6ec05260-1ubuntu10) focal; urgency=medium
 
   * for 20.04
