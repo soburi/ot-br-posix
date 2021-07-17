@@ -10,6 +10,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: find
+        run: |
+          find .
       - name: Build Debian package
         uses: dawidd6/action-debian-package@v1
         with:
