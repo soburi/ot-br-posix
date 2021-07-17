@@ -1,3 +1,9 @@
+ot-br-posix (20180819-443-ge6ec05260-1ubuntu10) focal; urgency=medium
+
+  * for 20.04
+
+ -- Tokita Hiroshi <soburi@gmail.com>  Sat, 17 Jul 2021 07:16:14 -0700
+
 ot-br-posix (20180819-443-ge6ec05260-1ubuntu9) hirsute; urgency=medium
 
   * add build dependencies
