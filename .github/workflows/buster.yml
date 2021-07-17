@@ -8,7 +8,7 @@ on:
 jobs:
 
   build:
-    runs-on: debian-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Build Debian package
         uses: dawidd6/action-debian-package@v1
