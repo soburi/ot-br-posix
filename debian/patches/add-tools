@@ -1,6 +1,8 @@
---- a/tools/CMakeLists.txt
-+++ b/tools/CMakeLists.txt
-@@ -37,6 +37,10 @@
+Index: ot-br-posix/tools/CMakeLists.txt
+===================================================================
+--- ot-br-posix.orig/tools/CMakeLists.txt
++++ ot-br-posix/tools/CMakeLists.txt
+@@ -37,6 +37,10 @@ target_link_libraries(pskc PRIVATE
      mbedcrypto
      mbedx509
  )
@@ -11,7 +13,7 @@
  
  add_executable(steering-data
      steering_data.cpp
-@@ -48,6 +52,10 @@
+@@ -48,6 +52,10 @@ target_link_libraries(steering-data PRIV
      mbedtls
      mbedcrypto
  )

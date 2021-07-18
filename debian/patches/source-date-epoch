@@ -1,6 +1,8 @@
---- a/third_party/openthread/repo/src/core/CMakeLists.txt
-+++ b/third_party/openthread/repo/src/core/CMakeLists.txt
-@@ -225,6 +225,11 @@
+Index: ot-br-posix/third_party/openthread/repo/src/core/CMakeLists.txt
+===================================================================
+--- ot-br-posix.orig/third_party/openthread/repo/src/core/CMakeLists.txt
++++ ot-br-posix/third_party/openthread/repo/src/core/CMakeLists.txt
+@@ -228,6 +228,11 @@ if(OT_VENDOR_EXTENSION)
    list(APPEND COMMON_SOURCES ${OT_VENDOR_EXTENSION})
  endif()
  
@@ -12,9 +14,11 @@
  if(OT_FTD)
      include(ftd.cmake)
  endif()
---- a/third_party/openthread/repo/src/core/api/instance_api.cpp
-+++ b/third_party/openthread/repo/src/core/api/instance_api.cpp
-@@ -166,8 +166,8 @@
+Index: ot-br-posix/third_party/openthread/repo/src/core/api/instance_api.cpp
+===================================================================
+--- ot-br-posix.orig/third_party/openthread/repo/src/core/api/instance_api.cpp
++++ ot-br-posix/third_party/openthread/repo/src/core/api/instance_api.cpp
+@@ -166,8 +166,8 @@ const char *otGetVersionString(void)
      static
  #endif
      const char sVersion[] = PACKAGE_NAME "/" PACKAGE_VERSION "; " OPENTHREAD_CONFIG_PLATFORM_INFO

@@ -1,5 +1,7 @@
---- a/src/web/web-service/frontend/CMakeLists.txt
-+++ b/src/web/web-service/frontend/CMakeLists.txt
+Index: ot-br-posix/src/web/web-service/frontend/CMakeLists.txt
+===================================================================
+--- ot-br-posix.orig/src/web/web-service/frontend/CMakeLists.txt
++++ ot-br-posix/src/web/web-service/frontend/CMakeLists.txt
 @@ -27,22 +27,22 @@
  #
  
