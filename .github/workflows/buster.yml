@@ -18,6 +18,9 @@ jobs:
       - name: check
         run: find ./
 
+      - name: checkcat
+        run: cat third_party/openthread/repo/src/core/CMakeLists.txt
+
       - name: Build Debian package
         uses: dawidd6/action-debian-package@v1
         with:
