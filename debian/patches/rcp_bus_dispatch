@@ -76,8 +76,8 @@
 +
 +    inline otError Init(const ot::Url::Url &aRadioUrl)
 +    {
-+        if ((0 < strstr(url.GetProtocol(), "+hdlc") ) { mIsHdlc = true; }
-+        else if ((0 < strstr(url.GetProtocol(), "+spi") ) { mIsHdlc = false; }
++        if (strstr(aRadioUrl.GetProtocol(), "+hdlc") != nullptr) { mIsHdlc = true; }
++        else if (strstr(aRadioUrl.GetProtocol(), "+spi") != nullptr) { mIsHdlc = false; }
 +        else { return OT_ERROR_INVALID_ARGS; }
 +
 +        return SPINEL_DISPATCH(Init, aRadioUrl);
