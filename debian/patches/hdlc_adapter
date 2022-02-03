@@ -15,5 +15,16 @@
 +add_subdirectory(spi-hdlc-adapter)
 --- /dev/null
 +++ b/third_party/openthread/repo/tools/spi-hdlc-adapter/CMakeLists.txt
-@@ -0,0 +1 @@
-+hoge
+@@ -0,0 +1,12 @@
++add_executable(spi-hdlc-adapter
++    spi-hdlc-adapter.cpp
++)
++
++install(
++    TARGETS spi-hdlc-adapter
++    DESTINATION bin
++)
++
++target_include_directories(ot-config INTERFACE
++    ${PROJECT_SOURCE_DIR}/include/openthread
++)
