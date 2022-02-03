@@ -5,3 +5,4 @@ source-date-epoch
 mbedtls-libraries
 add-tools
 fix-ComputeJoinerId
+hdlc_adapter

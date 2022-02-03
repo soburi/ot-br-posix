@@ -1,0 +1,19 @@
+--- a/third_party/openthread/repo/CMakeLists.txt
++++ b/third_party/openthread/repo/CMakeLists.txt
+@@ -206,6 +206,8 @@
+ 
+ add_subdirectory(tests)
+ 
++add_subdirectory(tools)
++
+ add_custom_target(print-ot-config ALL
+                   COMMAND ${CMAKE_COMMAND}
+                   -DLIST="$<TARGET_PROPERTY:ot-config,INTERFACE_COMPILE_DEFINITIONS>"
+--- /dev/null
++++ b/third_party/openthread/repo/tools/CMakeLists.txt
+@@ -0,0 +1 @@
++add_subdirectory(spi-hdlc-adapter)
+--- /dev/null
++++ b/third_party/openthread/repo/tools/spi-hdlc-adapter/CMakeLists.txt
+@@ -0,0 +1 @@
++hoge
