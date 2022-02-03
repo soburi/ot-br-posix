@@ -65,6 +65,9 @@ override_dh_auto_configure:
 		-DOT_COVERAGE=OFF \
 		-B . -S
 
+override_dh_auto_build:
+	cd obj-x86_64-linux-gnu && LC_ALL=C.UTF-8 ninja -j2 -v all spi-hdlc-adapter
+
 
 override_dh_fixperms:
 	dh_fixperms

@@ -15,7 +15,7 @@
 +add_subdirectory(spi-hdlc-adapter)
 --- /dev/null
 +++ b/third_party/openthread/repo/tools/spi-hdlc-adapter/CMakeLists.txt
-@@ -0,0 +1,12 @@
+@@ -0,0 +1,16 @@
 +add_executable(spi-hdlc-adapter
 +    spi-hdlc-adapter.c
 +)
@@ -28,3 +28,27 @@
 +target_include_directories(spi-hdlc-adapter INTERFACE
 +    ${PROJECT_SOURCE_DIR}/include/openthread
 +)
++
++set_property(SOURCE spi-hdlc-adapter.c
++    APPEND PROPERTY COMPILE_DEFINITIONS "OPENTHREAD_BUILD_DATETIME=${SOURCE_DATE_EPOCH}"
++)
+--- a/third_party/openthread/repo/tools/spi-hdlc-adapter/spi-hdlc-adapter.c
++++ b/third_party/openthread/repo/tools/spi-hdlc-adapter/spi-hdlc-adapter.c
+@@ -1388,7 +1388,7 @@
+ 
+ static void print_version(void)
+ {
+-    printf("spi-hdlc-adapter " SPI_HDLC_VERSION " (" __TIME__ " " __DATE__ ")\n");
++    printf("spi-hdlc-adapter " SPI_HDLC_VERSION " (" OPENTHREAD_BUILD_DATETIME ")\n");
+     printf("Copyright (c) 2017 The OpenThread Authors, All Rights Reserved\n");
+ }
+ 
+@@ -1734,7 +1734,7 @@
+         }
+     }
+ 
+-    syslog(LOG_NOTICE, "spi-hdlc-adapter " SPI_HDLC_VERSION " (" __TIME__ " " __DATE__ ")\n");
++    syslog(LOG_NOTICE, "spi-hdlc-adapter " SPI_HDLC_VERSION " (" OPENTHREAD_BUILD_DATETIME ")\n");
+ 
+     if (optind == argc)
+     {
