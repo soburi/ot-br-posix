@@ -61,3 +61,9 @@ Suggests: otbr-agent
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: OpenThread control
  cli-tools for otbr-agent
+
+Package: spi-hdlc-adapter
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Agent for OpenThread Border Router
+ OpenThread Border Router Agent

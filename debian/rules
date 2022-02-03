@@ -74,7 +74,12 @@ override_dh_fixperms:
 	chmod 755 debian/otbr-ncp-state-notifier/usr/sbin/ncp_state_notifier
 
 override_dh_auto_install:
-	dh_auto_install
+	dh_auto_install -- all spi-hdlc-adapter
+	mkdir -p debian/spi-hdlc-adapter/usr/sbin/
+	mkdir -p debian/spi-hdlc-adapter/etc/default/
+	mkdir -p debian/spi-hdlc-adapter/lib/systemd/system/
+	cp obj-$(DEB_HOST_MULTIARCH)/third_party/openthread/repo/tools/spi-hdlc-adapter/spi-hdlc-adapter debian/spi-hdlc-adapter/usr/sbin/
+	strip obj-$(DEB_HOST_MULTIARCH)/third_party/openthread/repo/tools/spi-hdlc-adapter/spi-hdlc-adapter debian/spi-hdlc-adapter/usr/sbin/spi-hdlc-adapter
 	mkdir -p debian/otbr-ncp-state-notifier/usr/sbin/
 	mkdir -p debian/otbr-ncp-state-notifier/etc/default/
 	mkdir -p debian/otbr-ncp-state-notifier/lib/systemd/system/
@@ -85,6 +90,7 @@ override_dh_auto_install:
 override_dh_installsystemd:
 	dh_installsystemd --name=otbr-web
 	dh_installsystemd --name=otbr-agent
+	dh_installsystemd --name=spi-hdlc-adapter
 
 override_dh_auto_test:
 

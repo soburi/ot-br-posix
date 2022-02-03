@@ -1,0 +1,4 @@
+# Default settings for spi-hdlc-adapter. This file is sourced by systemd
+
+# Options to pass to spi-hdlc-adapter
+SPI_HDLC_ADAPTER_OPTS="spinel+spi:///dev/spidev0.0?gpio-int-device=/dev/gpiochip0&gpio-int-line=25&gpio-reset-device=/dev/gpiochip0&gpio-reset-line=17 trel://trel0"
