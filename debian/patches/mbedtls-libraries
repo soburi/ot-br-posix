@@ -1,6 +1,6 @@
 --- a/src/utils/CMakeLists.txt
 +++ b/src/utils/CMakeLists.txt
-@@ -38,4 +38,6 @@
+@@ -41,4 +41,6 @@
  target_link_libraries(otbr-utils PRIVATE
      otbr-common
      mbedtls
@@ -20,7 +20,7 @@
  )
 --- a/tests/unit/CMakeLists.txt
 +++ b/tests/unit/CMakeLists.txt
-@@ -44,6 +44,8 @@
+@@ -45,6 +45,8 @@
      $<$<BOOL:${CPPUTEST_LIBRARY_DIRS}>:-L$<JOIN:${CPPUTEST_LIBRARY_DIRS}," -L">>
      ${CPPUTEST_LIBRARIES}
      mbedtls

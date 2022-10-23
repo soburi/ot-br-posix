@@ -1,6 +1,5 @@
 suppress_npm_install
 files_from_npm_repository
-source-date-epoch
 mbedtls-libraries
 add-tools
 fix-ComputeJoinerId

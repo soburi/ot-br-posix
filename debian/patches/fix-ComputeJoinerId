@@ -33,7 +33,7 @@
 --- a/src/utils/steering_data.hpp
 +++ b/src/utils/steering_data.hpp
 @@ -97,7 +97,7 @@
-      * @param[out]  aJoinerId   A pointer to receive joiner id. This pointer can be the same as @p aEui64.
+      * @param[out] aJoinerId  A pointer to receive joiner id. This pointer can be the same as @p aEui64.
       *
       */
 -    static void ComputeJoinerId(const uint8_t *aEui64, uint8_t *aJoinerId);

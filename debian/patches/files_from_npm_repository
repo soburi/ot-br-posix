@@ -494,7 +494,7 @@
 +//# sourceMappingURL=angular-messages.min.js.map
 --- /dev/null
 +++ b/src/web/web-service/frontend/node_modules/angular-material/angular-material.min.css
-@@ -0,0 +0,6 @@
+@@ -0,0 +1,6 @@
 +/*!
 + * AngularJS Material Design
 + * https://github.com/angular/material
